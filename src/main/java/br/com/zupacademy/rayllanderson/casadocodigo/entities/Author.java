@@ -27,6 +27,10 @@ public class Author {
     @NotNull
     private LocalDateTime registeredMoment;
 
+    @Deprecated
+    public Author() {
+    }
+
     public Author(@NotBlank String name, @NotBlank @Email String email, @NotBlank @Size(max = 400) String description) {
         this.name = name;
         this.email = email;
