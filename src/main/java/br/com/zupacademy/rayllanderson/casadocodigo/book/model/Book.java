@@ -66,6 +66,10 @@ public class Book {
         this.author = author;
     }
 
+    public Long getId(){
+        return this.id;
+    }
+
     public String getIsbn() {
         return isbn;
     }
@@ -92,10 +96,6 @@ public class Book {
 
     public LocalDate getPublicationDate() {
         return publicationDate;
-    }
-
-    public Category getCategory() {
-        return category;
     }
 
     public Author getAuthor() {

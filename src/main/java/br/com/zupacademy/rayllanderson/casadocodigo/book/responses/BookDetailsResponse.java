@@ -2,12 +2,8 @@ package br.com.zupacademy.rayllanderson.casadocodigo.book.responses;
 
 import br.com.zupacademy.rayllanderson.casadocodigo.author.responses.AuthorResponse;
 import br.com.zupacademy.rayllanderson.casadocodigo.book.model.Book;
-import br.com.zupacademy.rayllanderson.casadocodigo.category.responses.CategoryResponse;
 
-import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class BookDetailsResponse {
 
@@ -19,7 +15,6 @@ public class BookDetailsResponse {
     private final Double price;
     private final Integer pageNumbers;
     private final String publicationDate;
-    private final CategoryResponse category;
 
     public BookDetailsResponse(Book book) {
         this.isbn = book.getIsbn();
@@ -30,7 +25,6 @@ public class BookDetailsResponse {
         this.pageNumbers = book.getPageNumbers();
         this.publicationDate = book.getPublicationDate().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         this.author = new AuthorResponse(book.getAuthor());
-        this.category = new CategoryResponse(book.getCategory());
     }
 
     public String getIsbn() {
@@ -63,9 +57,5 @@ public class BookDetailsResponse {
 
     public AuthorResponse getAuthor() {
         return author;
-    }
-
-    public CategoryResponse getCategory() {
-        return category;
     }
 }
