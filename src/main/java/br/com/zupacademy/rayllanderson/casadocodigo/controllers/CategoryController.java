@@ -3,12 +3,13 @@ package br.com.zupacademy.rayllanderson.casadocodigo.controllers;
 import br.com.zupacademy.rayllanderson.casadocodigo.dtos.request.CategoryPostRequest;
 import br.com.zupacademy.rayllanderson.casadocodigo.entities.Category;
 import br.com.zupacademy.rayllanderson.casadocodigo.repositories.CategoryRepository;
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.DuplicateCategoryNameValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
@@ -17,17 +18,10 @@ import javax.validation.Valid;
 public class CategoryController {
 
     private final CategoryRepository categoryRepository;
-    private final DuplicateCategoryNameValidator duplicateCategoryNameValidator;
 
     @Autowired
-    public CategoryController(CategoryRepository categoryRepository, DuplicateCategoryNameValidator duplicateCategoryNameValidator) {
+    public CategoryController(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
-        this.duplicateCategoryNameValidator = duplicateCategoryNameValidator;
-    }
-
-    @InitBinder
-    public void init(WebDataBinder binder){
-        binder.addValidators(duplicateCategoryNameValidator);
     }
 
     @PostMapping
