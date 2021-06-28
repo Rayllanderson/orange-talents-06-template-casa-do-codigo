@@ -1,6 +1,6 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.validators.annotations;
+package br.com.zupacademy.rayllanderson.casadocodigo.core.annotations;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.UniqueValueValidator;
+import br.com.zupacademy.rayllanderson.casadocodigo.core.validators.UniqueValueValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

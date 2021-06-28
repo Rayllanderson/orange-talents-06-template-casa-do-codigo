@@ -1,7 +1,7 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.dtos.request;
+package br.com.zupacademy.rayllanderson.casadocodigo.category.requests;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Category;
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.annotations.UniqueValue;
+import br.com.zupacademy.rayllanderson.casadocodigo.category.model.Category;
+import br.com.zupacademy.rayllanderson.casadocodigo.core.annotations.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonCreator;
 
 import javax.validation.constraints.NotBlank;

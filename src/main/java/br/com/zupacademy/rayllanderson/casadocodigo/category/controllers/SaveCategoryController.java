@@ -1,8 +1,8 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.controllers;
+package br.com.zupacademy.rayllanderson.casadocodigo.category.controllers;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.dtos.request.CategoryPostRequest;
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Category;
-import br.com.zupacademy.rayllanderson.casadocodigo.repositories.CategoryRepository;
+import br.com.zupacademy.rayllanderson.casadocodigo.category.requests.CategoryPostRequest;
+import br.com.zupacademy.rayllanderson.casadocodigo.category.model.Category;
+import br.com.zupacademy.rayllanderson.casadocodigo.category.repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,12 +15,12 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/categories")
-public class CategoryController {
+public class SaveCategoryController {
 
     private final CategoryRepository categoryRepository;
 
     @Autowired
-    public CategoryController(CategoryRepository categoryRepository) {
+    public SaveCategoryController(CategoryRepository categoryRepository) {
         this.categoryRepository = categoryRepository;
     }
 

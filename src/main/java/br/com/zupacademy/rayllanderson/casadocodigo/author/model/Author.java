@@ -1,4 +1,4 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.entities;
+package br.com.zupacademy.rayllanderson.casadocodigo.author.model;
 
 import javax.persistence.Id;
 import javax.persistence.Entity;

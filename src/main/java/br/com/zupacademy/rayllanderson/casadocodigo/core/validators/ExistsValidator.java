@@ -1,6 +1,6 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.validators;
+package br.com.zupacademy.rayllanderson.casadocodigo.core.validators;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.annotations.UniqueValue;
+import br.com.zupacademy.rayllanderson.casadocodigo.core.annotations.Exists;
 import org.springframework.util.Assert;
 
 import javax.persistence.EntityManager;
@@ -9,7 +9,7 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import java.util.List;
 
-public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Object> {
+public class ExistsValidator implements ConstraintValidator<Exists, Object> {
 
     private Class<?> klass;
     private String field;
@@ -17,12 +17,12 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
     @PersistenceContext
     private final EntityManager em;
 
-    public UniqueValueValidator(EntityManager em) {
+    public ExistsValidator(EntityManager em) {
         this.em = em;
     }
 
     @Override
-    public void initialize(UniqueValue constraintAnnotation) {
+    public void initialize(Exists constraintAnnotation) {
         klass = constraintAnnotation.domainClass();
         field = constraintAnnotation.field();
     }
@@ -31,7 +31,7 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
     public boolean isValid(Object object, ConstraintValidatorContext constraintValidatorContext) {
         String jpql = "SELECT 1 FROM " + klass.getName() + " WHERE " + field + " = :field";
         List<?> result = em.createQuery(jpql).setParameter("field", object).getResultList();
-        Assert.state(result.size() <= 1, "Existem mais de um(a) " + klass.getSimpleName() + " com o atributo " + field);
-        return result.isEmpty();
+        Assert.state(result.size() > 0, "Não existe nenhum(a) " + klass.getSimpleName() + " com " + field + ": " + object);
+        return true;
     }
 }

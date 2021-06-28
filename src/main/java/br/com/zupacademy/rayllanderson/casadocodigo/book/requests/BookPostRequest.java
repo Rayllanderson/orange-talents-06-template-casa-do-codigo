@@ -1,10 +1,10 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.dtos.request;
+package br.com.zupacademy.rayllanderson.casadocodigo.book.requests;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Author;
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Book;
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Category;
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.annotations.Exists;
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.annotations.UniqueValue;
+import br.com.zupacademy.rayllanderson.casadocodigo.author.model.Author;
+import br.com.zupacademy.rayllanderson.casadocodigo.book.model.Book;
+import br.com.zupacademy.rayllanderson.casadocodigo.category.model.Category;
+import br.com.zupacademy.rayllanderson.casadocodigo.core.annotations.Exists;
+import br.com.zupacademy.rayllanderson.casadocodigo.core.annotations.UniqueValue;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 

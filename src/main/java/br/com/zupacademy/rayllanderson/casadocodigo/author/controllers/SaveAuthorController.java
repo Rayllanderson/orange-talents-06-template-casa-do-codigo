@@ -1,8 +1,8 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.controllers;
+package br.com.zupacademy.rayllanderson.casadocodigo.author.controllers;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.dtos.request.AuthorPostRequest;
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Author;
-import br.com.zupacademy.rayllanderson.casadocodigo.repositories.AuthorRepository;
+import br.com.zupacademy.rayllanderson.casadocodigo.author.requests.AuthorPostRequest;
+import br.com.zupacademy.rayllanderson.casadocodigo.author.model.Author;
+import br.com.zupacademy.rayllanderson.casadocodigo.author.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,12 +15,12 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/authors")
-public class AuthorController {
+public class SaveAuthorController {
 
     private final AuthorRepository authorRepository;
 
     @Autowired
-    public AuthorController(AuthorRepository authorRepository) {
+    public SaveAuthorController(AuthorRepository authorRepository) {
         this.authorRepository = authorRepository;
     }
 

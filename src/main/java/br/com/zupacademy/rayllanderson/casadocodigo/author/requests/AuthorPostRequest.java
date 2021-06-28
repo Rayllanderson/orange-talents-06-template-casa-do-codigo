@@ -1,7 +1,7 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.dtos.request;
+package br.com.zupacademy.rayllanderson.casadocodigo.author.requests;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Author;
-import br.com.zupacademy.rayllanderson.casadocodigo.validators.annotations.UniqueValue;
+import br.com.zupacademy.rayllanderson.casadocodigo.author.model.Author;
+import br.com.zupacademy.rayllanderson.casadocodigo.core.annotations.UniqueValue;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;

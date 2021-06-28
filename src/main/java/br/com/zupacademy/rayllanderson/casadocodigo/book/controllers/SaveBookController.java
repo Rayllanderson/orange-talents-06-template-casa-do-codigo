@@ -1,7 +1,7 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.controllers;
+package br.com.zupacademy.rayllanderson.casadocodigo.book.controllers;
 
-import br.com.zupacademy.rayllanderson.casadocodigo.dtos.request.BookPostRequest;
-import br.com.zupacademy.rayllanderson.casadocodigo.entities.Book;
+import br.com.zupacademy.rayllanderson.casadocodigo.book.requests.BookPostRequest;
+import br.com.zupacademy.rayllanderson.casadocodigo.book.model.Book;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,12 +15,12 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/books")
-public class BookController {
+public class SaveBookController {
 
     @PersistenceContext
     private final EntityManager manager;
 
-    public BookController(EntityManager manager) {
+    public SaveBookController(EntityManager manager) {
         this.manager = manager;
     }
 

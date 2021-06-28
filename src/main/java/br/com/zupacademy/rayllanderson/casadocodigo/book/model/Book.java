@@ -1,4 +1,7 @@
-package br.com.zupacademy.rayllanderson.casadocodigo.entities;
+package br.com.zupacademy.rayllanderson.casadocodigo.book.model;
+
+import br.com.zupacademy.rayllanderson.casadocodigo.author.model.Author;
+import br.com.zupacademy.rayllanderson.casadocodigo.category.model.Category;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
