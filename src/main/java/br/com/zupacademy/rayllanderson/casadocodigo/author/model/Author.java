@@ -37,4 +37,12 @@ public class Author {
         this.description = description;
         this.registeredMoment = LocalDateTime.now();
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

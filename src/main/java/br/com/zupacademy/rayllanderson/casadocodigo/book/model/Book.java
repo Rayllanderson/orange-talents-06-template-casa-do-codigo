@@ -3,10 +3,7 @@ package br.com.zupacademy.rayllanderson.casadocodigo.book.model;
 import br.com.zupacademy.rayllanderson.casadocodigo.author.model.Author;
 import br.com.zupacademy.rayllanderson.casadocodigo.category.model.Category;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -18,6 +15,9 @@ import java.time.LocalDate;
 public class Book {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @NotNull
     private String isbn;
 
@@ -64,5 +64,41 @@ public class Book {
         this.publicationDate = publicationDate;
         this.category = category;
         this.author = author;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getResume() {
+        return resume;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public Integer getPageNumbers() {
+        return pageNumbers;
+    }
+
+    public LocalDate getPublicationDate() {
+        return publicationDate;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public Author getAuthor() {
+        return author;
     }
 }

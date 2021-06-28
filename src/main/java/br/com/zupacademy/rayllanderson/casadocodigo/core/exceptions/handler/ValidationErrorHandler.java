@@ -1,5 +1,6 @@
 package br.com.zupacademy.rayllanderson.casadocodigo.core.exceptions.handler;
 
+import br.com.zupacademy.rayllanderson.casadocodigo.core.exceptions.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -43,6 +44,14 @@ public class ValidationErrorHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalStateException.class)
     public ValidationErrorOutputDto handleIllegalStateException(IllegalStateException exception){
+        ValidationErrorOutputDto validationErrors = new ValidationErrorOutputDto();
+        validationErrors.addError(exception.getMessage());
+        return validationErrors;
+    }
+
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    @ExceptionHandler(NotFoundException.class)
+    public ValidationErrorOutputDto handleNotFoundException(NotFoundException exception){
         ValidationErrorOutputDto validationErrors = new ValidationErrorOutputDto();
         validationErrors.addError(exception.getMessage());
         return validationErrors;

@@ -23,4 +23,8 @@ public class Category {
     public Category(@NotBlank String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }
