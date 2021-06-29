@@ -26,4 +26,12 @@ public class State {
         this.name = name;
         this.country = country;
     }
+
+    public boolean belongToThatCountry(Country country){
+        return this.country.equals(country);
+    }
+
+    public String getName() {
+        return name;
+    }
 }

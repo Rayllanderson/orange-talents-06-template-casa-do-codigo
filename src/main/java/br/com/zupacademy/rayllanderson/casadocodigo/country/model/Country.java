@@ -21,4 +21,8 @@ public class Country {
     public Country(String name) {
         this.name = name;
     }
+
+    public String getName() {
+        return name;
+    }
 }

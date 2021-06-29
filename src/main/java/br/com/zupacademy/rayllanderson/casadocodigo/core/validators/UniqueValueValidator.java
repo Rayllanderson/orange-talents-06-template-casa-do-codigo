@@ -29,6 +29,7 @@ public class UniqueValueValidator implements ConstraintValidator<UniqueValue, Ob
 
     @Override
     public boolean isValid(Object object, ConstraintValidatorContext constraintValidatorContext) {
+        if (object == null || object.equals("")) return false;
         String jpql = "SELECT 1 FROM " + klass.getName() + " WHERE " + field + " = :field";
         List<?> result = em.createQuery(jpql).setParameter("field", object).getResultList();
         Assert.state(result.size() <= 1, "Existem mais de um(a) " + klass.getSimpleName() + " com o atributo " + field);
